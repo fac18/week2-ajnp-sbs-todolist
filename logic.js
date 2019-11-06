@@ -30,6 +30,7 @@ var todoFunctions = {
       // hint: array.concat
     },
     deleteTodo: function(todos, idToDelete) {
+
     var x = todos.filter(y=> {
       return y.id !== idToDelete;
     })
