@@ -1,0 +1,24 @@
+{
+  "name": "week2-ajnp-sbs-todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "scripts": {
+    "test": "nodemon test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac18/week2-ajnp-sbs-todolist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac18/week2-ajnp-sbs-todolist/issues"
+  },
+  "homepage": "https://github.com/fac18/week2-ajnp-sbs-todolist#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
