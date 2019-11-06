@@ -6,7 +6,7 @@ test('Example test', function(t) {
   t.end();
 });
 
-test('Makes deleteTodo remove an idToDelete while keeping it pure', function(t) {
+test('Makes deleteTodo remove an idToDelete', function(t) {
   t.deepEqual(todoFunctions.deleteTodo([
     {
       id: 0,
@@ -29,18 +29,5 @@ test('Makes deleteTodo remove an idToDelete while keeping it pure', function(t) 
   }]),
   
   "Removes idToDelete from array";
-
-  t.deepEqual(todos,[
-    {
-      id: 0,
-      description: 'smash avocados',
-      done: true,
-    },
-    {
-      id: 1,
-      description: 'make coffee',
-      done: false,
-    },
-  ])
 t.end();
 });
