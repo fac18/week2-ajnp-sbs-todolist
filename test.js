@@ -1,7 +1,46 @@
 var test = require('tape');
-var logic = require('./logic');
+var todoFunctions = require('./logic');
 
 test('Example test', function(t) {
   t.pass();
   t.end();
+});
+
+test('Makes deleteTodo remove an idToDelete while keeping it pure', function(t) {
+  t.deepEqual(todoFunctions.deleteTodo([
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ],1)
+  
+  ,
+  
+  [{
+    id: 0,
+    description: 'smash avocados',
+    done: true,
+  }]),
+  
+  "Removes idToDelete from array";
+
+  t.deepEqual(todos,[
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ])
+t.end();
 });

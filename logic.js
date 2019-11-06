@@ -30,6 +30,12 @@ var todoFunctions = {
       // hint: array.concat
     },
     deleteTodo: function(todos, idToDelete) {
+    var x = todos.filter(y=> {
+      return y.id !== idToDelete;
+    })
+
+    return x;
+
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
