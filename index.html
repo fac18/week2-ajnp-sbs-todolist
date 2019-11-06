@@ -1,20 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>tdd todo</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8" />
+    <meta name="description" content="To Do List" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bear tings to-do</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lakki+Reddy|Raleway|Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/bear.png" />
   </head>
   <body>
-    <div id = "todo-container">
-        <ul>
-        </ul>
-    </div>
+    <header>
+      <h1 class="floating-box">Bear tings to do</h1>
+    </header>
+    <section id="todo-container">
+      <ul>
+        <li>
+          <input type="checkbox" name="done" value="false" />
+          hi
+          <button name="delete" value="delete" />
+        </li>
+        <li>
+          <input type="checkbox" name="done" value="false" />
+          scare humans
+          <button name="delete" value="delete" />
+        </li>
+        <li>
+          <input type="checkbox" name="done" value="false" />
+          steal porridge
+          <button name="delete" value="delete" />
+        </li>
+      </ul>
+    </section>
     <form id="add-todo">
-      <input type="text" name="description" value="">
-      <input type="submit" name="" value="Submit">
+      <input type="text" name="description" value="" />
+      <input type="submit" name="" value="Submit" class="submit-change" />
     </form>
   </body>
-  <script type="text/javascript" src = "./logic.js"></script>
-  <script type="text/javascript" src = "./dom.js"></script>
+  <script type="text/javascript" src="./logic.js"></script>
+  <script type="text/javascript" src="./dom.js"></script>
 </html>
