@@ -7,9 +7,9 @@
   var addTodoForm = document.getElementById("add-todo");
 
   var state = [
-    { id: -3, description: "Scare humans" },
-    { id: -2, description: "Send Mowgli to get honey" },
-    { id: -1, description: "Make marmalade sandwich" }
+    { id: -3, description: "Scare humans", done: false },
+    { id: -2, description: "Send Mowgli to get honey", done: false },
+    { id: -1, description: "Make marmalade sandwich", done: false }
   ];
   console.log(state);
   // this is our initial todoList
@@ -17,23 +17,40 @@
   var createTodoNode = function(todo) {
     var todoNode = document.createElement("li");
 
+    // add span holding description
+    var label = document.createElement("label");
+    todoNode.appendChild(label);
+    label.setAttribute("for", todo.id);
+    if (todo.done) {
+      label.classList.add("checked");
+    }
+
+    console.log(todo.description);
+    label.textContent = todo.description;
+
     // add markTodo button
     var checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
-    todoNode.appendChild(checkbox);
+    checkbox.setAttribute("id", todo.id);
 
-    // add span holding description
-    var descriptionHolder = document.createElement("span");
-    todoNode.appendChild(descriptionHolder);
-    console.log(todo.description);
-    descriptionHolder.textContent = todo.description;
+    label.appendChild(checkbox);
 
+    var paw = document.createElement("span");
+    label.appendChild(paw);
     // you will need to use addEventListener
+
     todoNode.addEventListener("click", function(event) {
       if (checkbox.classList.contains("checked")) {
         checkbox.classList.remove("checked");
+        label.classList.remove("checked");
+
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
       } else {
         checkbox.classList.add("checked");
+        label.classList.add("checked");
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
       }
     });
 
@@ -44,7 +61,8 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-
+    deleteButtonNode.textContent = "Delete";
+    deleteButtonNode.classList.add("button");
     // add classes for css
 
     return todoNode;
@@ -85,4 +103,5 @@
   };
 
   if (container) renderState(state);
+
 })();
