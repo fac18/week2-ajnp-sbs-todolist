@@ -7,6 +7,7 @@ var oneTodo = [
     done: true
   }
 ];
+
 var twoTodos = [
   {
     id: 0,
@@ -20,11 +21,30 @@ var twoTodos = [
   }
 ];
 
+var threeTodos = [
+  {
+    id: 0,
+    description: "smash avocados",
+    done: true
+  },
+  {
+    id: 1,
+    description: "make coffee",
+    done: false
+  },
+  {
+    id: 2,
+    description: "make tea",
+    done: false
+  }
+];
+
 test("Example test", function(t) {
   t.pass();
   t.end();
 });
 
+// Beginning of tests for addtodo
 test("returns array with original todos and the newTodo added to the end in addTodo function", function(t) {
   var actual = todoFunctions.addTodo(oneTodo, "make coffee");
   var expected = twoTodos;
@@ -64,3 +84,49 @@ test("Input argument todos has not been altered in addTodo function", function(t
 //   );
 //   t.end();
 // });
+
+//Beginning of tests for deleteTodo
+
+test("Makes deleteTodo remove an idToDelete in an array of 2 objects", function(t) {
+  t.deepEqual(
+    todoFunctions.deleteTodo(twoTodos, 1),
+
+    oneTodo,
+
+    "Removes idToDelete from array"
+  );
+  t.end();
+});
+
+test("Makes deleteTodo remove an idToDelete in an array of 3 objects", function(t) {
+  t.deepEqual(
+    todoFunctions.deleteTodo(threeTodos, 2),
+
+    twoTodos,
+
+    "Removes idToDelete from array of 3 objects"
+  );
+  t.end();
+});
+
+test("deleteTodo keep the original todo the same", function(t) {
+  todoFunctions.deleteTodo(twoTodos, 1);
+
+  t.deepEqual(
+    twoTodos,
+    [
+      {
+        id: 0,
+        description: "smash avocados",
+        done: true
+      },
+      {
+        id: 1,
+        description: "make coffee",
+        done: false
+      }
+    ],
+    "Original was kept the same"
+  );
+  t.end();
+});
