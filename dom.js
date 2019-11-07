@@ -21,9 +21,6 @@
     var label = document.createElement("label");
     todoNode.appendChild(label);
     label.setAttribute("for", todo.id);
-    if (todo.done) {
-      label.classList.add("checked");
-    }
 
     console.log(todo.description);
     label.textContent = todo.description;
@@ -35,20 +32,28 @@
 
     label.appendChild(checkbox);
 
-    var paw = document.createElement("span");
+    var paw = document.createElement("div");
     label.appendChild(paw);
     // you will need to use addEventListener
 
+    if (todo.done) {
+      label.classList.add("checked");
+      paw.classList.add("checked");
+    } else {
+      label.classList.remove("checked");
+      paw.classList.remove("checked");
+    }
+
     todoNode.addEventListener("click", function(event) {
       if (checkbox.classList.contains("checked")) {
-        checkbox.classList.remove("checked");
-        label.classList.remove("checked");
+        // checkbox.classList.remove("checked");
+        // label.classList.remove("checked");
 
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       } else {
-        checkbox.classList.add("checked");
-        label.classList.add("checked");
+        // checkbox.classList.add("checked");
+        // label.classList.add("checked");
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       }
