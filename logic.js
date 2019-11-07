@@ -36,7 +36,6 @@ var todoFunctions = {
     newObj.id = this.generateId();
     newObj.description = newTodo;
     newObj.done = false;
-    // console.log(newObj);
     //concatinate newObject into newObjArr
     return newObjArr.concat(newObj);
   },
@@ -59,9 +58,12 @@ var todoFunctions = {
     var todosCopy = this.cloneArrayOfObjects(todos);
     var todosMapped = todosCopy.map(function(todoObj) {
       if (todoObj.id === idToMark) {
-        todoObj.done = true;
-      } else {
-      }
+        if (todoObj.done === true) { 
+          todoObj.done = false;
+        } else {
+          todoObj.done = true;
+        }
+      } else { }
       return todoObj;
     });
     return todosMapped;
