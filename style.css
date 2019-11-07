@@ -73,6 +73,11 @@ li {
   padding: 8px;
 }
 
+li:hover {
+  color: #465f3e;
+  font-weight: bold;
+}
+
 .checked {
   text-decoration: line-through;
 }
@@ -80,6 +85,7 @@ li {
 label {
   position: relative;
   padding-left: 35px;
+  cursor: pointer;
 }
 
 li input {
@@ -148,6 +154,7 @@ input[name="description"] {
   color: #f0f1db;
   background-color: #465f3e;
   padding: 4px;
+  cursor: pointer;
 }
 
 #footer {
