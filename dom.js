@@ -44,7 +44,8 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-
+    deleteButtonNode.textContent = "Delete";
+    deleteButtonNode.classList.add("button");
     // add classes for css
 
     return todoNode;
