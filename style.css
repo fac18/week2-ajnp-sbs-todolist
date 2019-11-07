@@ -72,6 +72,10 @@ li {
   padding: 8px;
 }
 
+input:checked + label {
+  text-decoration: line-through;
+}
+
 p {
   font-size: 3rem;
   margin: auto;
