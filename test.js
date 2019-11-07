@@ -1,5 +1,12 @@
 var test = require("tape");
 var todoFunctions = require("./logic");
+var oneTodo = [
+  {
+    id: 0,
+    description: "smash avocados",
+    done: true
+  }
+];
 var twoTodos = [
   {
     id: 0,
@@ -12,43 +19,33 @@ var twoTodos = [
     done: false
   }
 ];
-var threeTodos = [
-  {
-    id: 0,
-    description: "smash avocados",
-    done: true
-  },
-  {
-    id: 1,
-    description: "make coffee",
-    done: false
-  },
-  {
-    id: 2,
-    description: "drink",
-    done: false
-  }
-];
 
 test("Example test", function(t) {
   t.pass();
   t.end();
 });
 
+test("returns array with original todos and the newTodo added to the end in addTodo function", function(t) {
+  var actual = todoFunctions.addTodo(oneTodo, "make coffee");
+  var expected = twoTodos;
+  t.deepEqual(
+    actual,
+    expected,
+    "Should return array containing todos with the newTodo added to the end."
+  );
+  t.end();
+});
+
 // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
 test("Input argument todos has not been altered in addTodo function", function(t) {
-  t.equal(
-    twoTodos,
+  todoFunctions.addTodo(oneTodo, "eat watermelon");
+  t.deepEqual(
+    oneTodo,
     [
       {
         id: 0,
         description: "smash avocados",
         done: true
-      },
-      {
-        id: 1,
-        description: "make coffee",
-        done: false
       }
     ],
     "todos argument has not been altered."
@@ -56,21 +53,14 @@ test("Input argument todos has not been altered in addTodo function", function(t
   t.end();
 });
 
-test("returns array with original todos and the newTodo added to the end in addTodo function", function(t) {
-  t.equal(
-    todoFunctions.addTodo(twoTodos, "drink"),
-    threeTodos,
-    "Should return array containing todos with the newTodo added to the end."
-  );
-  t.end();
-});
+// Stretch goal test: to test the length of the original array and compare it to the output length todos.length
 
-// test("newTodo has an id key in addTodo function", function(t) {
-//   var actual
-//   var expected
-//
-//   t.equal(
-//
+// test("Input argument todos has not been altered in addTodo function", function(t) {
+//   todoFunctions.addTodo(oneTodo, "eat watermelon");
+//   t.deepEqual(
+//     oneTodo.length + 1,
+//     todoFunctions.addTodo.newObjArr.length,
+//     "newObjArr is 1 object longer than the original input."
 //   );
 //   t.end();
 // });

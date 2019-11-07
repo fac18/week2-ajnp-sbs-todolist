@@ -25,9 +25,20 @@ var todoFunctions = {
 
   addTodo: function(todos, newTodo) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
+    // returns a new array, it should contain todos with the newTodo added to the end.
     // hint: array.concat
+
+    //copies existing array of objects into new variable
+    var newObjArr = this.cloneArrayOfObjects(todos);
+    //creates newobject
+    var newObj = new Object();
+    newObj.id = this.generateId();
+    newObj.description = newTodo;
+    newObj.done = false;
+    // console.log(newObj);
+    //concatinate newObject into newObjArr
+    return newObjArr.concat(newObj);
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
