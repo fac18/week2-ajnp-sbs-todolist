@@ -130,3 +130,53 @@ test("deleteTodo keep the original todo the same", function(t) {
   );
   t.end();
 });
+
+
+test("markTodo keep the original todo the same", function(t) {
+  todoFunctions.markTodo(twoTodos, 1);
+  t.deepEqual(
+    twoTodos,
+    [
+      {
+        id: 0,
+        description: "smash avocados",
+        done: true
+      },
+      {
+        id: 1,
+        description: "make coffee",
+        done: false
+      }
+    ],
+    "Original was kept the same"
+  );
+  t.end();
+});
+
+
+test("Makes markTodo mark an object's done key as true using threeTodos test", function(t) {
+  t.deepEqual(
+    todoFunctions.markTodo(threeTodos, 2),
+
+    [
+      {
+        id: 0,
+        description: "smash avocados",
+        done: true
+      },
+      {
+        id: 1,
+        description: "make coffee",
+        done: false
+      },
+      {
+        id: 2,
+        description: "make tea",
+        done: true
+      }
+    ],
+
+    "Marks todo id 2's done key as true (using threeTodos test)"
+  );
+  t.end();
+});
