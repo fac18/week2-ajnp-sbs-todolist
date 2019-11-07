@@ -72,7 +72,7 @@ li {
   padding: 8px;
 }
 
-input:checked + label {
+.checked {
   text-decoration: line-through;
 }
 
