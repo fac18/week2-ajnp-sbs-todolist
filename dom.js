@@ -11,7 +11,6 @@
     { id: -2, description: "Send Mowgli to get honey", done: false },
     { id: -1, description: "Make marmalade sandwich", done: false }
   ];
-  console.log(state);
   // this is our initial todoList
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
@@ -22,7 +21,6 @@
     todoNode.appendChild(label);
     label.setAttribute("for", todo.id);
 
-    console.log(todo.description);
     label.textContent = todo.description;
 
     // add markTodo button
@@ -81,10 +79,12 @@
 
       // what is inside event.target?
       var description = event.target.querySelector("input").value; // event.target ....
-      console.log(description);
       // hint: todoFunctions.addTodo
+      if (description !== "") {
       var newState = todoFunctions.addTodo(state, description); // ?? change this!
       update(newState);
+      event.target.querySelector("input").value = "";
+      }
     });
   }
 
@@ -99,7 +99,6 @@
   var update = function(newState) {
     state = newState;
     renderState(state);
-    console.log("new:", state);
   };
 
   // you do not need to change this function
