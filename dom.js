@@ -7,21 +7,26 @@
   var addTodoForm = document.getElementById("add-todo");
 
   var state = [
-    { id: -3, description: "first todo" },
-    { id: -2, description: "second todo" },
-    { id: -1, description: "third todo" }
-  ]; // this is our initial todoList
-
+    { id: -3, description: "Scare humans" },
+    { id: -2, description: "Send Mowgli to get honey" },
+    { id: -1, description: "Make marmalade sandwich" }
+  ];
+  console.log(state);
+  // this is our initial todoList
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement("li");
 
+    // add markTodo button
     var checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     todoNode.appendChild(checkbox);
 
+    // add span holding description
     var descriptionHolder = document.createElement("span");
     todoNode.appendChild(descriptionHolder);
+    console.log(todo.description);
+    descriptionHolder.textContent = todo.description;
 
     // you will need to use addEventListener
     todoNode.addEventListener("click", function(event) {
@@ -31,7 +36,6 @@
         checkbox.classList.add("checked");
       }
     });
-    // add span holding description
 
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
@@ -40,8 +44,6 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-
-    // add markTodo button
 
     // add classes for css
 
@@ -52,13 +54,13 @@
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
+      event.preventDefault();
+
       // what is inside event.target?
-
-      var description = "?"; // event.target ....
-
+      var description = event.target.querySelector("input").value; // event.target ....
+      console.log(description);
       // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      var newState = todoFunctions.addTodo(state, description); // ?? change this!
       update(newState);
     });
   }
@@ -67,6 +69,7 @@
   var update = function(newState) {
     state = newState;
     renderState(state);
+    console.log("new:", state);
   };
 
   // you do not need to change this function
