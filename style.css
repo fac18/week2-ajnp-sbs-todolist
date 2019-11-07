@@ -44,7 +44,7 @@ header {
 
 section {
   text-align: center;
-  padding: 8px;
+  padding: 1rem 0.5rem;
 }
 
 h1 {
@@ -80,6 +80,7 @@ li {
 label {
   position: relative;
   padding-left: 35px;
+  text-align: left;
 }
 
 li input {
@@ -131,7 +132,7 @@ a:hover {
 }
 
 form {
-  margin-bottom: 3rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -197,7 +198,7 @@ input[name="description"] {
   }
 
   section {
-    padding: 3.5rem;
+    padding: 2rem 3.5rem;
   }
 
   form {
@@ -205,6 +206,10 @@ input[name="description"] {
   }
   
   #footer {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.7rem;
     text-align: center;
   }
