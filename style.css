@@ -60,6 +60,7 @@ h2 {
 ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   list-style: none;
 }
@@ -132,6 +133,13 @@ a:hover {
 form {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+input[name="description"] {
+  border: solid 2px #465f3e;
+  padding: 8px;
+  width: 50%;
+  font-size: 1rem;
 }
 
 .button {
