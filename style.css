@@ -32,7 +32,7 @@ header {
   height: 30vh;
   width: 100vw;
   justify-content: center;
-  background-image: url("../img/brownbear.jpg");
+  background-image: url("./img/brownbear.jpg");
   background-size: cover;
 }
 
@@ -100,7 +100,7 @@ div {
 }
 
 .checked div {
-  background-image: url(../img/bearpaw.jpg);
+  background-image: url(./img/bearpaw.jpg);
   background-size: cover;
 }
 
