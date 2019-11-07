@@ -76,6 +76,34 @@ li {
   text-decoration: line-through;
 }
 
+label {
+  position: relative;
+  padding-left: 35px;
+}
+
+li input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ffffff;
+  border: solid 2px #465f3e;
+}
+
+.checked div {
+  background-image: url(../img/bearpaw.jpg);
+  background-size: cover;
+}
+
 p {
   font-size: 3rem;
   margin: auto;
