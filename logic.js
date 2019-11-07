@@ -60,12 +60,12 @@ var todoFunctions = {
     var todosMapped = todosCopy.map(function(todoObj) {
       if (todoObj.id === idToMark) {
         todoObj.done = true;
-        } else {
+      } else {
       }
       return todoObj;
     });
-      return todosMapped;
-    },
+    return todosMapped;
+  },
 
   sortTodos: function(todos) {
     var todosCopy=this.cloneArrayOfObjects(todos);

@@ -20,20 +20,26 @@
     // add markTodo button
     var checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("id", todo.id);
+
     todoNode.appendChild(checkbox);
 
     // add span holding description
-    var descriptionHolder = document.createElement("span");
-    todoNode.appendChild(descriptionHolder);
+    var label = document.createElement("label");
+    todoNode.appendChild(label);
+    label.setAttribute("for", todo.id);
+
     console.log(todo.description);
-    descriptionHolder.textContent = todo.description;
+    label.textContent = todo.description;
 
     // you will need to use addEventListener
     todoNode.addEventListener("click", function(event) {
       if (checkbox.classList.contains("checked")) {
         checkbox.classList.remove("checked");
+        label.classList.remove("checked");
       } else {
         checkbox.classList.add("checked");
+        label.classList.add("checked");
       }
     });
 
@@ -44,7 +50,8 @@
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
-
+    deleteButtonNode.textContent = "Delete";
+    deleteButtonNode.classList.add("button");
     // add classes for css
 
     return todoNode;
