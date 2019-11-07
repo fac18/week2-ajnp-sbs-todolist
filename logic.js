@@ -36,7 +36,6 @@ var todoFunctions = {
     newObj.id = this.generateId();
     newObj.description = newTodo;
     newObj.done = false;
-    // console.log(newObj);
     //concatinate newObject into newObjArr
     return newObjArr.concat(newObj);
   },
@@ -59,15 +58,24 @@ var todoFunctions = {
     var todosCopy = this.cloneArrayOfObjects(todos);
     var todosMapped = todosCopy.map(function(todoObj) {
       if (todoObj.id === idToMark) {
-        todoObj.done = true;
-      } else {
-      }
+        if (todoObj.done === true) { 
+          todoObj.done = false;
+        } else {
+          todoObj.done = true;
+        }
+      } else { }
       return todoObj;
     });
     return todosMapped;
   },
 
-  sortTodos: function(todos, sortFunction) {
+  sortTodos: function(todos) {
+    var todosCopy=this.cloneArrayOfObjects(todos);
+    var todosSorted=todosCopy.sort(function (a,b) {
+      return a.done - b.done;
+    })
+
+    return todosSorted;
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort

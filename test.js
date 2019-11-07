@@ -180,3 +180,56 @@ test("Makes markTodo mark an object's done key as true using threeTodos test", f
   );
   t.end();
 });
+
+test("Sorts elements by done key in ascending order (false first)", function(t) {
+  t.deepEqual(
+    todoFunctions.sortTodos(threeTodos),
+
+    [ {
+      id: 1,
+      description: "make coffee",
+      done: false
+    },
+    {
+      id: 2,
+      description: "make tea",
+      done: false
+    },
+      {
+        id: 0,
+        description: "smash avocados",
+        done: true
+      }
+    ],
+
+    "Sorts elements by done key in ascending order (false first)"
+  );
+  t.end();
+
+  test("sortTodos keeps the original todo the same", function(t) {
+    todoFunctions.sortTodos(threeTodos);
+    t.deepEqual(
+      threeTodos,
+      [
+        {
+          id: 0,
+          description: "smash avocados",
+          done: true
+        },
+        {
+          id: 1,
+          description: "make coffee",
+          done: false
+        },
+        {
+          id: 2,
+          description: "make tea",
+          done: false
+        }
+      ],
+      "Original was kept the same"
+    );
+    t.end();
+  });
+
+});

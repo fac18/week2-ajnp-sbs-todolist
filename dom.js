@@ -88,6 +88,13 @@
     });
   }
 
+  
+
+  document.getElementById("sortBtn").addEventListener("click", function(){
+    var newState = todoFunctions.sortTodos(state);
+    update(newState);
+  });
+
   // you should not need to change this function
   var update = function(newState) {
     state = newState;
@@ -108,4 +115,5 @@
   };
 
   if (container) renderState(state);
-})();
+  })
+();
