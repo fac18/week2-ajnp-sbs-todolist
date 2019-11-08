@@ -51,7 +51,7 @@
         update(newState);
       }
     });
-// this adds the delete button
+// this adds the edit button
 var editButtonNode = document.createElement("button");
 editButtonNode.addEventListener("click", function(event) {
   var newState = todoFunctions.editTodo(state, todo.id);

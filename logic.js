@@ -92,7 +92,6 @@ var todoFunctions = {
     var todosSorted=todosCopy.sort(function (a,b) {
       return a.done - b.done;
     })
-
     return todosSorted;
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
