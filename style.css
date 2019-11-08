@@ -84,6 +84,7 @@ li:hover {
 
 label {
   position: relative;
+  width: 75%;
   padding-left: 35px;
   text-align: left;
   cursor: pointer;
@@ -161,11 +162,6 @@ input[name="description"] {
 }
 
 #footer {
-  font-size: 0.7rem;
-  text-align: center;
-}
-  
-#footer {
   position: fixed;
   bottom: 1rem;
   left: 50%;
@@ -207,7 +203,7 @@ input[name="description"] {
   }
 
   label {
-    width: 300px;
+    width: 75%;
     text-align: left;
     margin-right: 0.5rem;
     display: flex;
