@@ -24,6 +24,16 @@ Learning points (end of last week)
 ---
 ## Alex, Gillian, Kin, and Reggie's Epic 🐻 Project (group AJNP)
 
+### To start the project on your computer, you need to:
+
+Clone the repository :
+```git clone https://github.com/fac18/week2-ajnp-sbs-todolist.git```
+Install NPM :
+```npm install```
+Use NPM to install TAPE on your computer and work through the test file: ```npm i -D tape``` and ```npm i -D tap-spec```
+Then, to run the test :
+```npm test```
+
 ## WHY
 1. To learn how to do test driven development
 2. Improve knowledge of DOM manipulation
