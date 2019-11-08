@@ -63,7 +63,7 @@ var todoFunctions = {
         } else {
           todoObj.done = true;
         }
-      } else { }
+      }
       return todoObj;
     });
     return todosMapped;
