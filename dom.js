@@ -44,14 +44,9 @@
 
     todoNode.addEventListener("click", function(event) {
       if (checkbox.classList.contains("checked")) {
-        // checkbox.classList.remove("checked");
-        // label.classList.remove("checked");
-
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       } else {
-        // checkbox.classList.add("checked");
-        // label.classList.add("checked");
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       }
@@ -92,11 +87,9 @@ editButtonNode.classList.add("button");
       // what is inside event.target?
       var description = event.target.querySelector("input").value; // event.target ....
       // hint: todoFunctions.addTodo
-      if (description !== "") {
       var newState = todoFunctions.addTodo(state, description); // ?? change this!
       update(newState);
       event.target.querySelector("input").value = "";
-      }
     });
   }
 

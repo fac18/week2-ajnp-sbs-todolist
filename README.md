@@ -24,17 +24,33 @@ Learning points (end of last week)
 ---
 ## Alex, Gillian, Kin, and Reggie's Epic 🐻 Project (group AJNP)
 
+### To start the project on your computer, you need to:
+
+Clone the repository :
+```git clone https://github.com/fac18/week2-ajnp-sbs-todolist.git```
+Install NPM :
+```npm install```
+Use NPM to install TAPE on your computer and work through the test file: ```npm i -D tape``` and ```npm i -D tap-spec```
+Then, to run the test :
+```npm test```
+
 ## WHY
 1. To learn how to do test driven development
 2. Improve knowledge of DOM manipulation
 
 ## WHAT
 1.  Enter tasks I need to do into a web page :
-        1.1 add a new object in the list
-2. View the tasks I have added in the list
-3. Mark tasks as complete
-4. Delete an object from the list
-5. The to-dos to be large enough
+        1.1 add a new object in the list        ✅
+2. View the tasks I have added in the list      ✅
+3. Mark tasks as complete                       ✅
+4. Delete an object from the list               ✅
+5. The to-dos to be large enough                ✅
+
+Stretch goals:
+1. Sort button that sorts the completed from the remaining to do ✅
+2. Click on any part of a to-do to mark it as complete so that it's easier for me to check to-dos off ✅
+2. Edit the todos
+3. A visual indication of which to-do I'm about to interact with so that it's clear what I'm editing 1/2 ✅
 
 ## HOW
 
@@ -66,14 +82,19 @@ TDD made sure we deeply understood what the function was asking us to do before 
 We learnt the hard way that the map function only works to copy shallow arrays (arrays, not an array of objects). https://medium.com/@gamshan001/javascript-deep-copy-for-array-and-object-97e3d4bc401a
 
 #### DOM
-Gillian is our resident DOM master. 
-![Gillian baby with crown]()
+Gillian is our resident DOM Queen. 
+![Gillian baby with crown](./img/gillianbabycrown.JPG)
+
+Difficulties: 
+
+
 ![We specialise in Domination](https://media.giphy.com/media/pP3r879z4WtxrdeCGi/giphy.gif)
 
 #### Looking back
 
 What we could've done better
 - Reviewing it all together before starting 
+- Greater understanding 
 - We could likely have been more modular with our tests: for example testing the length of our todo array when adding or deleting a new object rather than just testing it against hard coded examples.
 - We made a small mistake by moving on to the dom.js before the the test and our functions were completed - this meant that we started trying to code the functions into our dom.js...
 ![Two bears looking at a computer screaming "oh god no"](https://media.giphy.com/media/ppFaBYPO8paUg/giphy.gif)

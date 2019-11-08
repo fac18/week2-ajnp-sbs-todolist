@@ -20,12 +20,14 @@
     <form id="add-todo">
       <input
         type="text"
+        aria-label="Enter your to-do here"
         name="description"
         placeholder="Enter your to-do here"
         value=""
+        required
       />
       <input type="submit" name="" value="Submit" class="button" />
-      <input type="button" id="sortBtn" value="Sort" class="button" />
+      <input type="button" id="sortBtn" value="Sort by done" class="button" />
     </form>
 
     <section id="todo-container">
