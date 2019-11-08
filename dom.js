@@ -51,7 +51,17 @@
         update(newState);
       }
     });
+// this adds the delete button
+var editButtonNode = document.createElement("button");
+editButtonNode.addEventListener("click", function(event) {
+  var newState = todoFunctions.editTodo(state, todo.id);
+  update(newState);
+});
+todoNode.appendChild(editButtonNode);
+editButtonNode.textContent = "Edit";
+editButtonNode.classList.add("button");
 
+// add classes for css
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
     deleteButtonNode.addEventListener("click", function(event) {
@@ -62,6 +72,8 @@
     deleteButtonNode.textContent = "Delete";
     deleteButtonNode.classList.add("button");
     // add classes for css
+
+
 
     return todoNode;
   };
